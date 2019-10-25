@@ -8,15 +8,24 @@ class Counter extends Component {
     }
   }
 
+/*  Class Methods Live Below The Constructor
+    & Above The Render Method
+*/
+
+increment = () => {
+  this.setState ({
+    count: this.state.count + 1
+  })
+}
 
   render()  {
     return (
       <div className = "container">
         <div className = "navbar">Counter.js</div>
         <div className = "counter">
-          <h1>What Do We Put Here?</h1>
-          <button type = "button">Increment</button>
-          <button type = "button">Decrement</button>
+          <h1>{this.state.count}</h1>
+          <button type = "button" onClick={this.increment}>Increment</button>
+          <button type = "button" onClick={this.decrement}>Decrement</button>
         </div>
       </div>
     )
